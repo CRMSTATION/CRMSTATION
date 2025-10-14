@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRM Station – Planos de Serviço Remoto</title>
+<style>
+/* Reset e fonte básica */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f7f7f7;
+color: #333;
+line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+
+/* Cabeçalho */
+header {
+background-color: #ffffff;
+padding: 40px 20px;
+text-align: center;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+color: #222;
+}
+header p {
+font-size: 1.2rem;
+color: #666;
+}
+
+/* Seção de planos */
+section {
+padding: 60px 20px;
+max-width: 1000px;
+margin: 0 auto;
+}
+section h2 {
+text-align: center;
+font-size: 2rem;
+margin-bottom: 40px;
+color: #222;
+}
+.planos {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+}
+.plano {
+background-color: #fff;
+padding: 30px 20px;
+flex: 1 1 280px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+transition: transform 0.3s ease;
+}
+.plano:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.plano h3 {
+font-size: 1.5rem;
+margin-bottom: 15px;
+color: #222;
+}
+.plano p {
+margin-bottom: 15px;
+color: #555;
+}
+.plano ul {
+margin-bottom: 20px;
+padding-left: 20px;
+color: #555;
+}
+.plano ul li {
+margin-bottom: 10px;
+}
+.plano .price {
+font-weight: bold;
+font-size: 1.3rem;
+color: #222;
+}
+
+/* Rodapé */
+footer {
+background-color: #ffffff;
+text-align: center;
+padding: 20px;
+color: #666;
+border-top: 1px solid #e0e0e0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+.planos {
+flex-direction: column;
+gap: 30px;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>CRM Station</h1>
+<p>Organização inteligente da sua rotina. Atendimento, informações e controle financeiro com clareza e agilidade.</p>
+</header>
+
+<section>
+<h2>Planos de Serviço Remoto</h2>
+<div class="planos">
+<div class="plano">
+<h3>Essencial</h3>
+<p>Para quem precisa manter o básico em dia, com atendimento eficiente.</p>
+<ul>
+<li>Fechamento diário de caixa</li>
+<li>Conferência de pagamentos recebidos</li>
+<li>Relatórios semanais (entradas e saídas)</li>
+<li>Gestão diária do atendimento aos clientes</li>
+</ul>
+<div class="price">R$ 500 / mês</div>
+</div>
+
+<div class="plano">
+<h3>Plus</h3>
+<p>Perfeito para quem busca mais controle e estrutura operacional.</p>
+<ul>
+<li>Tudo do plano Essencial</li>
+<li>Organização de pedidos no Trello</li>
+<li>Controle atualizado de estoque</li>
+<li>Gestão centralizada das informações dos clientes</li>
+</ul>
+<div class="price">R$ 850 / mês</div>
+</div>
+
+<div class="plano">
+<h3>Premium</h3>
+<p>Para quem quer gestão completa, sem se preocupar com os bastidores.</p>
+<ul>
+<li>Tudo do plano Plus</li>
+<li>Agendamento e atendimento direto com os clientes</li>
+<li>Planilhas personalizadas para controle financeiro e estoque</li>
+<li>Reunião mensal com análise e sugestões de melhoria</li>
+</ul>
+<div class="price">R$ 1.200 / mês</div>
+</div>
+</div>
+<p style="text-align:center; margin-top:40px; color:#555;">Atendimento 100% remoto. Sua operação mais leve, com tudo no lugar.</p>
+</section>
+
+<footer>
+© 2025 CRM Station – Todos os direitos reservados
+</footer>
+</body>
+</html>
