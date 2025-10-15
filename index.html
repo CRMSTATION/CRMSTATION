@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CRM Station – Planos de Serviço Remoto</title>
   <style>
-    /* Reset e fonte básica */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,8 +14,6 @@
       scroll-behavior: smooth;
     }
     a { text-decoration: none; color: inherit; }
-
-    /* Cores do site */
     :root{
       --azul-escuro: #0d1b2a;
       --azul-claro: #1b3b5a;
@@ -26,8 +23,6 @@
       --branco: #ffffff;
       --verde-whatsapp: #25d366;
     }
-
-    /* Cabeçalho e menu */
     header {
       background: linear-gradient(90deg, var(--azul-escuro), var(--azul-claro));
       color: var(--branco);
@@ -48,13 +43,9 @@
     }
     nav a { color: var(--branco); font-weight: 600; transition: color 0.3s; }
     nav a:hover { color: var(--azul-destaque); }
-
-    /* Ajuste para âncoras com header fixo */
     section { scroll-margin-top: 120px; }
-
-    /* Seções */
     section {
-      padding: 160px 20px 60px 20px; /* compensar menu fixo */
+      padding: 160px 20px 60px 20px;
       max-width: 1000px;
       margin: 0 auto;
       opacity: 0;
@@ -74,8 +65,6 @@
       color: var(--texto-secundario);
       margin-bottom: 40px;
     }
-
-    /* Planos */
     .planos {
       display: flex;
       flex-wrap: wrap;
@@ -108,65 +97,9 @@
       font-size: 1.5rem;
       color: var(--azul-escuro);
     }
-
-    /* História */
-    .historia {
-      background-color: var(--azul-claro);
-      color: var(--branco);
-      padding: 60px 20px;
-      border-radius: 12px;
-    }
-    .historia p { margin-bottom: 15px; }
-
-    /* Redes sociais */
-    .redes { text-align: center; margin-top: 60px; }
-    .redes a {
-      display: inline-block;
-      margin: 0 15px;
-      padding: 10px 20px;
-      border-radius: 6px;
-      background-color: var(--azul-destaque);
-      color: var(--branco);
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .redes a:hover { background-color: var(--azul-escuro); }
-
-    /* Contato direto */
-    .contato {
-      text-align: center;
-      margin-top: 20px;
-      padding: 20px;
-      background: linear-gradient(180deg, rgba(58,110,165,0.06), rgba(255,255,255,0.0));
-      border-radius: 12px;
-    }
-    .contato a { 
-      display: inline-block; 
-      margin: 8px 12px; 
-      color: var(--azul-escuro); 
-      font-weight: 600; 
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: var(--branco);
-      text-align: center;
-      padding: 20px;
-      color: #666;
-      border-top: 1px solid #e0e0e0;
-      margin-top: 40px;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .planos { flex-direction: column; gap: 30px; }
-      nav { flex-direction: column; gap: 15px; margin-top: 20px; }
-      .plano h3 { font-size: 1.6rem; }
-    }
   </style>
 </head>
 <body>
-
   <header>
     <h1>CRM Station</h1>
     <nav>
@@ -177,7 +110,6 @@
     </nav>
   </header>
 
-  <!-- Seção Planos -->
   <section id="planos">
     <h2>Planos de Serviço Remoto</h2>
     <p class="subtitulo">Escolha o plano ideal para otimizar sua empresa</p>
@@ -219,43 +151,70 @@
       </div>
     </div>
   </section>
-
-  <!-- Seção História -->
   <section id="historia">
     <h2>Conheça nossa história</h2>
-    <p class="subtitulo">Transformando processos e melhorando resultados</p>
+    <p class="subtitulo">Entenda como nosso serviço funciona na prática</p>
+
     <div class="historia">
-      <p>Na CRM Station, oferecemos serviços remotos especializados para otimizar operações e atendimento. Nossa missão é entregar segurança, eficiência e relatórios claros para tomada de decisão.</p>
-      <p>Com experiência em diversas áreas operacionais, ajudamos pequenas e médias empresas a escalarem seus processos sem perder qualidade.</p>
+      <div class="chat">
+        <div class="mensagem recebida">
+          Oi! Gostaria de saber como vocês ajudam empresas na parte operacional?
+        </div>
+        <div class="mensagem enviada">
+          Olá! Trabalhamos com gestão remota para organizar atendimentos, relatórios e fluxo financeiro do dia a dia.
+        </div>
+        <div class="mensagem recebida">
+          Vocês acompanham caixa e pagamentos também?
+        </div>
+        <div class="mensagem enviada">
+          Sim! Fazemos fechamento diário, conferência de entradas e saídas e envio de relatórios semanais.
+        </div>
+        <div class="mensagem recebida">
+          E se eu precisar de algo mais avançado?
+        </div>
+        <div class="mensagem enviada">
+          Temos planos com consultoria estratégica, automação de processos e integração com sistemas de vendas 🙂
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Seção Redes sociais -->
   <section id="redes">
     <h2>Redes sociais</h2>
     <p class="subtitulo">Acompanhe nossas novidades</p>
     <div class="redes">
-      <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1">Instagram</a>
-      <a href="https://wa.me/5519992646402">WhatsApp</a>
+      <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://wa.me/5519992646402" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <a href="mailto:CRMSTATION1@outlook.com">E-mail</a>
     </div>
   </section>
 
-  <!-- Seção Contato -->
   <section id="contato">
     <h2>Entre em contato</h2>
     <p class="subtitulo">Fale conosco — estamos prontos para ajudar</p>
 
     <div class="contato">
       <p><strong>E-mail:</strong> <a href="mailto:CRMSTATION1@outlook.com">CRMSTATION1@outlook.com</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5519992646402">+55 19 99264-6402</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1">@crmstation1</a></p>
+      <p><strong>WhatsApp (clique para abrir):</strong> <a href="https://wa.me/5519992646402" target="_blank" rel="noopener noreferrer">+55 19 99264-6402</a></p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">@crmstation1</a></p>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 CRM Station. Todos os direitos reservados.</p>
+    © 2025 CRM Station — Todos os direitos reservados.
   </footer>
 
+  <script>
+    const sections = document.querySelectorAll('section');
+    const showOnScroll = () => {
+      const scrollPosition = window.innerHeight * 0.9;
+      sections.forEach(sec => {
+        const sectionTop = sec.getBoundingClientRect().top;
+        if (sectionTop < scrollPosition) sec.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+  </script>
 </body>
 </html>
