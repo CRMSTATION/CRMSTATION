@@ -118,29 +118,6 @@
     }
     .historia p { margin-bottom: 15px; }
 
-    /* Conversa estilo WhatsApp */
-    .chat {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 600px;
-      margin: 30px auto 0 auto;
-    }
-    .chat .mensagem {
-      padding: 12px 18px;
-      border-radius: 20px;
-      max-width: 80%;
-      position: relative;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-    .chat .mensagem.recebida {
-      background-color: #fff; color: #333; align-self: flex-start; border-top-left-radius: 0;
-    }
-    .chat .mensagem.enviada {
-      background-color: var(--verde-whatsapp); color: #fff; align-self: flex-end; border-top-right-radius: 0;
-    }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
     /* Redes sociais */
     .redes { text-align: center; margin-top: 60px; }
     .redes a {
@@ -163,7 +140,12 @@
       background: linear-gradient(180deg, rgba(58,110,165,0.06), rgba(255,255,255,0.0));
       border-radius: 12px;
     }
-    .contato a { display:inline-block; margin:8px 12px; color:var(--azul-escuro); font-weight:600; }
+    .contato a { 
+      display: inline-block; 
+      margin: 8px 12px; 
+      color: var(--azul-escuro); 
+      font-weight: 600; 
+    }
 
     /* Rodapé */
     footer {
@@ -248,46 +230,32 @@
     </div>
   </section>
 
-  <!-- Seção Redes sociais e contato -->
+  <!-- Seção Redes sociais -->
   <section id="redes">
     <h2>Redes sociais</h2>
     <p class="subtitulo">Acompanhe nossas novidades</p>
     <div class="redes">
-      <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://wa.me/5519992646402" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1">Instagram</a>
+      <a href="https://wa.me/5519992646402">WhatsApp</a>
       <a href="mailto:CRMSTATION1@outlook.com">E-mail</a>
     </div>
   </section>
 
-  <!-- Seção Contato com informações distribuídas -->
+  <!-- Seção Contato -->
   <section id="contato">
     <h2>Entre em contato</h2>
     <p class="subtitulo">Fale conosco — estamos prontos para ajudar</p>
 
     <div class="contato">
       <p><strong>E-mail:</strong> <a href="mailto:CRMSTATION1@outlook.com">CRMSTATION1@outlook.com</a></p>
-      <p><strong>WhatsApp (clique para abrir):</strong> <a href="https://wa.me/5519992646402" target="_blank" rel="noopener noreferrer">+55 19 99264-6402</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">@crmstation1</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5519992646402">+55 19 99264-6402</a></p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1">@crmstation1</a></p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 CRM Station. Todos os direitos reservados.</p>
+    <p>© 2025 CRM Station. Todos os direitos reservados.</p>
   </footer>
-
-  <script>
-    const sections = document.querySelectorAll('section');
-    const revealOnScroll = () => {
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          section.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
 
 </body>
 </html>
