@@ -1,16 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CRM Station – Planos de Serviço Remoto</title>
   <style>
     /* Reset e fonte básica */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f7f7f7;
@@ -21,7 +18,7 @@
     a { text-decoration: none; color: inherit; }
 
     /* Cores do site */
-    :root {
+    :root{
       --azul-escuro: #0d1b2a;
       --azul-claro: #1b3b5a;
       --azul-destaque: #3a6ea5;
@@ -43,39 +40,29 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: var(--branco);
-    }
+    header h1 { font-size: 2rem; margin-bottom: 10px; color: var(--branco); }
     nav {
       display: flex;
       justify-content: center;
       gap: 30px;
       margin-top: 10px;
     }
-    nav a {
-      color: var(--branco);
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--azul-destaque);
-    }
+    nav a { color: var(--branco); font-weight: 600; transition: color 0.3s; }
+    nav a:hover { color: var(--azul-destaque); }
+
+    /* Ajuste para âncoras com header fixo */
+    section { scroll-margin-top: 120px; }
 
     /* Seções */
     section {
-      padding: 160px 20px 60px 20px; /* aumento para compensar menu fixo */
+      padding: 160px 20px 60px 20px; /* compensar menu fixo */
       max-width: 1000px;
       margin: 0 auto;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease-out;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible { opacity: 1; transform: translateY(0); }
     section h2 {
       text-align: center;
       font-size: 2.2rem;
@@ -107,26 +94,16 @@
       justify-content: space-between;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .plano:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
+    .plano:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
     .plano h3 {
       font-size: 1.8rem;
       margin-bottom: 15px;
       color: var(--azul-escuro);
       transition: color 0.3s;
     }
-    .plano h3:hover {
-      color: var(--azul-destaque);
-    }
-    .plano p, .plano ul li {
-      color: var(--texto-secundario);
-    }
-    .plano ul {
-      margin-bottom: 20px;
-      padding-left: 20px;
-    }
+    .plano h3:hover { color: var(--azul-destaque); }
+    .plano p, .plano ul li { color: var(--texto-secundario); }
+    .plano ul { margin-bottom: 20px; padding-left: 20px; }
     .plano .price {
       font-weight: bold;
       font-size: 1.5rem;
@@ -140,9 +117,7 @@
       padding: 60px 20px;
       border-radius: 12px;
     }
-    .historia p {
-      margin-bottom: 15px;
-    }
+    .historia p { margin-bottom: 15px; }
 
     /* Conversa estilo WhatsApp */
     .chat {
@@ -160,27 +135,15 @@
       animation: fadeIn 0.5s ease-in-out;
     }
     .chat .mensagem.recebida {
-      background-color: #fff;
-      color: #333;
-      align-self: flex-start;
-      border-top-left-radius: 0;
+      background-color: #fff; color: #333; align-self: flex-start; border-top-left-radius: 0;
     }
     .chat .mensagem.enviada {
-      background-color: var(--verde-whatsapp);
-      color: #fff;
-      align-self: flex-end;
-      border-top-right-radius: 0;
+      background-color: var(--verde-whatsapp); color: #fff; align-self: flex-end; border-top-right-radius: 0;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     /* Redes sociais */
-    .redes {
-      text-align: center;
-      margin-top: 60px;
-    }
+    .redes { text-align: center; margin-top: 60px; }
     .redes a {
       display: inline-block;
       margin: 0 15px;
@@ -191,9 +154,17 @@
       font-weight: 600;
       transition: background 0.3s;
     }
-    .redes a:hover {
-      background-color: var(--azul-escuro);
+    .redes a:hover { background-color: var(--azul-escuro); }
+
+    /* Contato direto */
+    .contato {
+      text-align: center;
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(58,110,165,0.06), rgba(255,255,255,0.0));
+      border-radius: 12px;
     }
+    .contato a { display:inline-block; margin:8px 12px; color:var(--azul-escuro); font-weight:600; }
 
     /* Rodapé */
     footer {
@@ -241,6 +212,60 @@
         </ul>
         <div class="price">R$ 500 / mês</div>
       </div>
+
       <div class="plano">
         <h3>Plus</h3>
-        <p>Perfeito para quem busca mais controle e estrutura operacional.</p
+        <p>Perfeito para quem busca mais controle e estrutura operacional.</p>
+        <ul>
+          <li>Tudo do Essencial</li>
+          <li>Relatórios gerenciais personalizados</li>
+          <li>Suporte prioritário</li>
+          <li>Integração com sistemas de vendas</li>
+        </ul>
+        <div class="price">R$ 1.200 / mês</div>
+      </div>
+
+      <div class="plano">
+        <h3>Premium</h3>
+        <p>Solução completa para empresas que exigem alto nível de suporte e automação.</p>
+        <ul>
+          <li>Tudo do Plus</li>
+          <li>Consultoria estratégica mensal</li>
+          <li>Automação de processos</li>
+          <li>Relatórios avançados e dashboards</li>
+        </ul>
+        <div class="price">Sob consulta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção História -->
+  <section id="historia">
+    <h2>Conheça nossa história</h2>
+    <p class="subtitulo">Transformando processos e melhorando resultados</p>
+    <div class="historia">
+      <p>Na CRM Station, oferecemos serviços remotos especializados para otimizar operações e atendimento. Nossa missão é entregar segurança, eficiência e relatórios claros para tomada de decisão.</p>
+      <p>Com experiência em diversas áreas operacionais, ajudamos pequenas e médias empresas a escalarem seus processos sem perder qualidade.</p>
+    </div>
+  </section>
+
+  <!-- Seção Redes sociais e contato -->
+  <section id="redes">
+    <h2>Redes sociais</h2>
+    <p class="subtitulo">Acompanhe nossas novidades</p>
+    <div class="redes">
+      <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://wa.me/5519992646402" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="mailto:CRMSTATION1@outlook.com">E-mail</a>
+    </div>
+  </section>
+
+  <!-- Seção Contato com informações distribuídas -->
+  <section id="contato">
+    <h2>Entre em contato</h2>
+    <p class="subtitulo">Fale conosco — estamos prontos para ajudar</p>
+
+    <div class="contato">
+      <p><strong>E-mail:</strong> <a href="mailto:CRMSTATION1@outlook.com">CRMSTATION1@outlook.com</a></p>
+      <p><strong>WhatsApp (clique para abrir):</strong> <a href="https://wa.me/5519992646402" target="_blank" rel="noopener noreferrer">+55 19 99264-6402</a></p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">@
