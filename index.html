@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -66,15 +65,28 @@
 
     /* Seções */
     section {
-      padding: 100px 20px 60px 20px;
+      padding: 160px 20px 60px 20px; /* aumento para compensar menu fixo */
       max-width: 1000px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     section h2 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
       color: var(--azul-escuro);
+    }
+    section .subtitulo {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--texto-secundario);
+      margin-bottom: 40px;
     }
 
     /* Planos */
@@ -100,9 +112,13 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
     .plano h3 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-bottom: 15px;
       color: var(--azul-escuro);
+      transition: color 0.3s;
+    }
+    .plano h3:hover {
+      color: var(--azul-destaque);
     }
     .plano p, .plano ul li {
       color: var(--texto-secundario);
@@ -113,7 +129,7 @@
     }
     .plano .price {
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       color: var(--azul-escuro);
     }
 
@@ -193,6 +209,7 @@
     @media (max-width: 768px) {
       .planos { flex-direction: column; gap: 30px; }
       nav { flex-direction: column; gap: 15px; margin-top: 20px; }
+      .plano h3 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -211,6 +228,7 @@
   <!-- Seção Planos -->
   <section id="planos">
     <h2>Planos de Serviço Remoto</h2>
+    <p class="subtitulo">Escolha o plano ideal para otimizar sua empresa</p>
     <div class="planos">
       <div class="plano">
         <h3>Essencial</h3>
@@ -225,66 +243,4 @@
       </div>
       <div class="plano">
         <h3>Plus</h3>
-        <p>Perfeito para quem busca mais controle e estrutura operacional.</p>
-        <ul>
-          <li>Tudo do plano Essencial</li>
-          <li>Organização de pedidos no Trello</li>
-          <li>Controle atualizado de estoque</li>
-          <li>Gestão centralizada das informações dos clientes</li>
-        </ul>
-        <div class="price">R$ 850 / mês</div>
-      </div>
-      <div class="plano">
-        <h3>Premium</h3>
-        <p>Para quem quer gestão completa, sem se preocupar com os bastidores.</p>
-        <ul>
-          <li>Tudo do plano Plus</li>
-          <li>Agendamento e atendimento direto com os clientes</li>
-          <li>Planilhas personalizadas para controle financeiro e estoque</li>
-          <li>Reunião mensal com análise e sugestões de melhoria</li>
-        </ul>
-        <div class="price">R$ 1.200 / mês</div>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:40px; color:var(--texto-secundario);">Atendimento 100% remoto. Sua operação mais leve, com tudo no lugar.</p>
-  </section>
-
-  <!-- Seção História -->
-  <section id="historia" class="historia">
-    <h2>Conheça nossa história</h2>
-    <p>Com base em experiências e vivências nas organizações de rotina das empresas, entendemos a importância da implantação de processos claros, organização e qualidade nos atendimentos.</p>
-    <p>Atentos aos detalhes e cuidados das informações, desenvolvemos soluções remotas que asseguram que os processos da sua empresa aconteçam de forma prática, eficiente e segura.</p>
-    <p>Nosso objetivo é proporcionar tranquilidade na gestão operacional, garantindo resultados consistentes, organização total e excelência no atendimento aos clientes. Com o CRM Station, sua empresa trabalha de forma inteligente, confiável e produtiva.</p>
-
-    <!-- Conversa estilo WhatsApp -->
-    <div class="chat">
-      <div class="mensagem recebida">Olá! 👋 Bem-vindo ao CRM Station.</div>
-      <div class="mensagem enviada">Oi! Quero conhecer mais sobre seus serviços.</div>
-      <div class="mensagem recebida">Perfeito! Oferecemos planos remotos para otimizar sua rotina e garantir eficiência.</div>
-      <div class="mensagem enviada">Quais planos vocês oferecem?</div>
-      <div class="mensagem recebida">Temos Essencial, Plus e Premium, todos pensados para sua empresa ganhar mais organização e controle sem complicação.</div>
-      <div class="mensagem enviada">Ótimo! Como posso entrar em contato?</div>
-      <div class="mensagem recebida">Você pode nos contatar via WhatsApp, Instagram ou LinkedIn diretamente na seção de Redes Sociais abaixo. 📲</div>
-    </div>
-  </section>
-
-  <!-- Seção Redes Sociais -->
-  <section id="redes" class="redes">
-    <h2>Redes sociais</h2>
-    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-    <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
-    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-  </section>
-
-  <!-- Seção Contato -->
-  <section id="contato">
-    <h2 style="text-align:center; color:var(--azul-escuro); margin-bottom:30px;">Entre em contato</h2>
-    <p style="text-align:center; color:var(--texto-secundario);">Para solicitar informações ou fechar um plano, envie uma mensagem pelo WhatsApp ou siga nossas redes sociais.</p>
-  </section>
-
-  <footer>
-    © 2025 CRM Station – Todos os direitos reservados
-  </footer>
-
-</body>
-</html>
+        <p>Perfeito para quem busca mais controle e estrutura operacional.</p
