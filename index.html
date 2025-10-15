@@ -267,4 +267,27 @@
     <div class="contato">
       <p><strong>E-mail:</strong> <a href="mailto:CRMSTATION1@outlook.com">CRMSTATION1@outlook.com</a></p>
       <p><strong>WhatsApp (clique para abrir):</strong> <a href="https://wa.me/5519992646402" target="_blank" rel="noopener noreferrer">+55 19 99264-6402</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">@
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/crmstation1?igsh=NXk0NGt2bWJ3a3M1" target="_blank" rel="noopener noreferrer">@crmstation1</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CRM Station. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+</body>
+</html>
