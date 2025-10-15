@@ -1,165 +1,290 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CRM Station – Planos de Serviço Remoto</title>
-<style>
-/* Reset e fonte básica */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background-color: #f7f7f7;
-color: #333;
-line-height: 1.6;
-}
-a { text-decoration: none; color: inherit; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Station – Planos de Serviço Remoto</title>
+  <style>
+    /* Reset e fonte básica */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; color: inherit; }
 
-/* Cabeçalho */
-header {
-background-color: #ffffff;
-padding: 40px 20px;
-text-align: center;
-box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-header h1 {
-font-size: 2.5rem;
-margin-bottom: 10px;
-color: #222;
-}
-header p {
-font-size: 1.2rem;
-color: #666;
-}
+    /* Cores do site */
+    :root {
+      --azul-escuro: #0d1b2a;
+      --azul-claro: #1b3b5a;
+      --azul-destaque: #3a6ea5;
+      --texto-secundario: #555;
+      --fundo-claro: #f7f7f7;
+      --branco: #ffffff;
+      --verde-whatsapp: #25d366;
+    }
 
-/* Seção de planos */
-section {
-padding: 60px 20px;
-max-width: 1000px;
-margin: 0 auto;
-}
-section h2 {
-text-align: center;
-font-size: 2rem;
-margin-bottom: 40px;
-color: #222;
-}
-.planos {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-}
-.plano {
-background-color: #fff;
-padding: 30px 20px;
-flex: 1 1 280px;
-border-radius: 12px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-transition: transform 0.3s ease;
-}
-.plano:hover {
-transform: translateY(-5px);
-box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-.plano h3 {
-font-size: 1.5rem;
-margin-bottom: 15px;
-color: #222;
-}
-.plano p {
-margin-bottom: 15px;
-color: #555;
-}
-.plano ul {
-margin-bottom: 20px;
-padding-left: 20px;
-color: #555;
-}
-.plano ul li {
-margin-bottom: 10px;
-}
-.plano .price {
-font-weight: bold;
-font-size: 1.3rem;
-color: #222;
-}
+    /* Cabeçalho e menu */
+    header {
+      background: linear-gradient(90deg, var(--azul-escuro), var(--azul-claro));
+      color: var(--branco);
+      padding: 20px 40px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--branco);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
+    nav a {
+      color: var(--branco);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--azul-destaque);
+    }
 
-/* Rodapé */
-footer {
-background-color: #ffffff;
-text-align: center;
-padding: 20px;
-color: #666;
-border-top: 1px solid #e0e0e0;
-}
+    /* Seções */
+    section {
+      padding: 100px 20px 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: var(--azul-escuro);
+    }
 
-/* Responsividade */
-@media (max-width: 768px) {
-.planos {
-flex-direction: column;
-gap: 30px;
-}
-}
-</style>
+    /* Planos */
+    .planos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .plano {
+      background-color: var(--branco);
+      padding: 30px 20px;
+      flex: 1 1 280px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .plano:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    .plano h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--azul-escuro);
+    }
+    .plano p, .plano ul li {
+      color: var(--texto-secundario);
+    }
+    .plano ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .plano .price {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: var(--azul-escuro);
+    }
+
+    /* História */
+    .historia {
+      background-color: var(--azul-claro);
+      color: var(--branco);
+      padding: 60px 20px;
+      border-radius: 12px;
+    }
+    .historia p {
+      margin-bottom: 15px;
+    }
+
+    /* Conversa estilo WhatsApp */
+    .chat {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 30px auto 0 auto;
+    }
+    .chat .mensagem {
+      padding: 12px 18px;
+      border-radius: 20px;
+      max-width: 80%;
+      position: relative;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .chat .mensagem.recebida {
+      background-color: #fff;
+      color: #333;
+      align-self: flex-start;
+      border-top-left-radius: 0;
+    }
+    .chat .mensagem.enviada {
+      background-color: var(--verde-whatsapp);
+      color: #fff;
+      align-self: flex-end;
+      border-top-right-radius: 0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Redes sociais */
+    .redes {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .redes a {
+      display: inline-block;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      background-color: var(--azul-destaque);
+      color: var(--branco);
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .redes a:hover {
+      background-color: var(--azul-escuro);
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: var(--branco);
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .planos { flex-direction: column; gap: 30px; }
+      nav { flex-direction: column; gap: 15px; margin-top: 20px; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1>CRM Station</h1>
-<p>Organização inteligente da sua rotina. Atendimento, informações e controle financeiro com clareza e agilidade.</p>
-</header>
 
-<section>
-<h2>Planos de Serviço Remoto</h2>
-<div class="planos">
-<div class="plano">
-<h3>Essencial</h3>
-<p>Para quem precisa manter o básico em dia, com atendimento eficiente.</p>
-<ul>
-<li>Fechamento diário de caixa</li>
-<li>Conferência de pagamentos recebidos</li>
-<li>Relatórios semanais (entradas e saídas)</li>
-<li>Gestão diária do atendimento aos clientes</li>
-</ul>
-<div class="price">R$ 500 / mês</div>
-</div>
+  <header>
+    <h1>CRM Station</h1>
+    <nav>
+      <a href="#planos">Planos</a>
+      <a href="#historia">Conheça nossa história</a>
+      <a href="#redes">Redes sociais</a>
+      <a href="#contato">Entre em contato</a>
+    </nav>
+  </header>
 
-<div class="plano">
-<h3>Plus</h3>
-<p>Perfeito para quem busca mais controle e estrutura operacional.</p>
-<ul>
-<li>Tudo do plano Essencial</li>
-<li>Organização de pedidos no Trello</li>
-<li>Controle atualizado de estoque</li>
-<li>Gestão centralizada das informações dos clientes</li>
-</ul>
-<div class="price">R$ 850 / mês</div>
-</div>
+  <!-- Seção Planos -->
+  <section id="planos">
+    <h2>Planos de Serviço Remoto</h2>
+    <div class="planos">
+      <div class="plano">
+        <h3>Essencial</h3>
+        <p>Para quem precisa manter o básico em dia, com atendimento eficiente.</p>
+        <ul>
+          <li>Fechamento diário de caixa</li>
+          <li>Conferência de pagamentos recebidos</li>
+          <li>Relatórios semanais (entradas e saídas)</li>
+          <li>Gestão diária do atendimento aos clientes</li>
+        </ul>
+        <div class="price">R$ 500 / mês</div>
+      </div>
+      <div class="plano">
+        <h3>Plus</h3>
+        <p>Perfeito para quem busca mais controle e estrutura operacional.</p>
+        <ul>
+          <li>Tudo do plano Essencial</li>
+          <li>Organização de pedidos no Trello</li>
+          <li>Controle atualizado de estoque</li>
+          <li>Gestão centralizada das informações dos clientes</li>
+        </ul>
+        <div class="price">R$ 850 / mês</div>
+      </div>
+      <div class="plano">
+        <h3>Premium</h3>
+        <p>Para quem quer gestão completa, sem se preocupar com os bastidores.</p>
+        <ul>
+          <li>Tudo do plano Plus</li>
+          <li>Agendamento e atendimento direto com os clientes</li>
+          <li>Planilhas personalizadas para controle financeiro e estoque</li>
+          <li>Reunião mensal com análise e sugestões de melhoria</li>
+        </ul>
+        <div class="price">R$ 1.200 / mês</div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:40px; color:var(--texto-secundario);">Atendimento 100% remoto. Sua operação mais leve, com tudo no lugar.</p>
+  </section>
 
-<div class="plano">
-<h3>Premium</h3>
-<p>Para quem quer gestão completa, sem se preocupar com os bastidores.</p>
-<ul>
-<li>Tudo do plano Plus</li>
-<li>Agendamento e atendimento direto com os clientes</li>
-<li>Planilhas personalizadas para controle financeiro e estoque</li>
-<li>Reunião mensal com análise e sugestões de melhoria</li>
-</ul>
-<div class="price">R$ 1.200 / mês</div>
-</div>
-</div>
-<p style="text-align:center; margin-top:40px; color:#555;">Atendimento 100% remoto. Sua operação mais leve, com tudo no lugar.</p>
-</section>
+  <!-- Seção História -->
+  <section id="historia" class="historia">
+    <h2>Conheça nossa história</h2>
+    <p>Com base em experiências e vivências nas organizações de rotina das empresas, entendemos a importância da implantação de processos claros, organização e qualidade nos atendimentos.</p>
+    <p>Atentos aos detalhes e cuidados das informações, desenvolvemos soluções remotas que asseguram que os processos da sua empresa aconteçam de forma prática, eficiente e segura.</p>
+    <p>Nosso objetivo é proporcionar tranquilidade na gestão operacional, garantindo resultados consistentes, organização total e excelência no atendimento aos clientes. Com o CRM Station, sua empresa trabalha de forma inteligente, confiável e produtiva.</p>
 
-<footer>
-© 2025 CRM Station – Todos os direitos reservados
-</footer>
+    <!-- Conversa estilo WhatsApp -->
+    <div class="chat">
+      <div class="mensagem recebida">Olá! 👋 Bem-vindo ao CRM Station.</div>
+      <div class="mensagem enviada">Oi! Quero conhecer mais sobre seus serviços.</div>
+      <div class="mensagem recebida">Perfeito! Oferecemos planos remotos para otimizar sua rotina e garantir eficiência.</div>
+      <div class="mensagem enviada">Quais planos vocês oferecem?</div>
+      <div class="mensagem recebida">Temos Essencial, Plus e Premium, todos pensados para sua empresa ganhar mais organização e controle sem complicação.</div>
+      <div class="mensagem enviada">Ótimo! Como posso entrar em contato?</div>
+      <div class="mensagem recebida">Você pode nos contatar via WhatsApp, Instagram ou LinkedIn diretamente na seção de Redes Sociais abaixo. 📲</div>
+    </div>
+  </section>
+
+  <!-- Seção Redes Sociais -->
+  <section id="redes" class="redes">
+    <h2>Redes sociais</h2>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a>
+    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato">
+    <h2 style="text-align:center; color:var(--azul-escuro); margin-bottom:30px;">Entre em contato</h2>
+    <p style="text-align:center; color:var(--texto-secundario);">Para solicitar informações ou fechar um plano, envie uma mensagem pelo WhatsApp ou siga nossas redes sociais.</p>
+  </section>
+
+  <footer>
+    © 2025 CRM Station – Todos os direitos reservados
+  </footer>
+
 </body>
 </html>
