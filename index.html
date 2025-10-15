@@ -97,9 +97,71 @@
       font-size: 1.5rem;
       color: var(--azul-escuro);
     }
+    .historia {
+      background-color: var(--azul-claro);
+      color: var(--branco);
+      padding: 60px 20px;
+      border-radius: 12px;
+    }
+    .historia p { margin-bottom: 15px; }
+    .chat {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 30px auto 0 auto;
+    }
+    .chat .mensagem {
+      padding: 12px 18px;
+      border-radius: 20px;
+      max-width: 80%;
+      position: relative;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .chat .mensagem.recebida {
+      background-color: #fff; color: #333; align-self: flex-start; border-top-left-radius: 0;
+    }
+    .chat .mensagem.enviada {
+      background-color: var(--verde-whatsapp); color: #fff; align-self: flex-end; border-top-right-radius: 0;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .redes { text-align: center; margin-top: 60px; }
+    .redes a {
+      display: inline-block;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      background-color: var(--azul-destaque);
+      color: var(--branco);
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .redes a:hover { background-color: var(--azul-escuro); }
+    .contato {
+      text-align: center;
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(58,110,165,0.06), rgba(255,255,255,0.0));
+      border-radius: 12px;
+    }
+    .contato a { display:inline-block; margin:8px 12px; color:var(--azul-escuro); font-weight:600; }
+    footer {
+      background-color: var(--branco);
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .planos { flex-direction: column; gap: 30px; }
+      nav { flex-direction: column; gap: 15px; margin-top: 20px; }
+      .plano h3 { font-size: 1.6rem; }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>CRM Station</h1>
     <nav>
@@ -151,6 +213,7 @@
       </div>
     </div>
   </section>
+
   <section id="historia">
     <h2>Conheça nossa história</h2>
     <p class="subtitulo">Entenda como nosso serviço funciona na prática</p>
@@ -161,7 +224,7 @@
           Oi! Gostaria de saber como vocês ajudam empresas na parte operacional?
         </div>
         <div class="mensagem enviada">
-          Olá! Trabalhamos com gestão remota para organizar atendimentos, relatórios e fluxo financeiro do dia a dia.
+          Trabalhamos com gestão remota para organizar atendimentos, relatórios e fluxo financeiro do dia a dia.
         </div>
         <div class="mensagem recebida">
           Vocês acompanham caixa e pagamentos também?
@@ -173,7 +236,7 @@
           E se eu precisar de algo mais avançado?
         </div>
         <div class="mensagem enviada">
-          Temos planos com consultoria estratégica, automação de processos e integração com sistemas de vendas 🙂
+          Temos planos com consultoria estratégica, automação de processos e integração com sistemas de vendas.
         </div>
       </div>
     </div>
@@ -216,5 +279,6 @@
     window.addEventListener('scroll', showOnScroll);
     showOnScroll();
   </script>
+
 </body>
 </html>
